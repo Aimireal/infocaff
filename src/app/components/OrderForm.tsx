@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import createOrder from "../api/createOrder";
-import { DrinkTypes } from "../data/drinkTypes";
+import { DrinkTypes } from "../data/DrinkTypes";
 import { MilkTypes } from "../data/MilkTypes";
 import { SizeTypes } from "../data/SizeTypes";
 

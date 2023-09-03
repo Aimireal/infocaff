@@ -1,9 +1,11 @@
-"use client";
+'use client'
 
-import OrderCard from "./OrderCard";
 import { useEffect, useState } from "react";
 import IOrder from "../types/IOrder";
 import { getOrders } from "../api/getOrders";
+import { onSnapshot, collection } from "firebase/firestore";
+import { firestore } from "../config/clientApp";
+import OrderCard from "./OrderCard";
 
 export default function OrdersGrid() {
   const [orders, setOrders] = useState<IOrder[]>([]);
@@ -17,6 +19,17 @@ export default function OrdersGrid() {
     };
 
     fetchOrders();
+
+    const ordersCollection = collection(firestore, "orders");
+    const unsubscribe = onSnapshot(ordersCollection, (snapshot) => {
+      const newOrders = snapshot.docs.map((doc) => {
+        const orderData = doc.data() as IOrder;
+        return { ...orderData, id: doc.id };
+      });
+      setOrders(newOrders);
+    });
+
+    return () => unsubscribe();
   }, []);
 
   return (

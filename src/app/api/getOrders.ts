@@ -7,12 +7,9 @@ export const getOrders = async () => {
   const ordersQuery = query(ordersCollection, limit(50));
 
   const querySnapshot = await getDocs(ordersQuery);
-  const result: IOrder[] = [];
-  querySnapshot.forEach((snapshot) => {
-    const orderData = snapshot.data() as IOrder;
-    orderData.id = snapshot.id;
-    result.push(orderData);
-  });
 
-  return result;
+  return querySnapshot.docs.map((doc) => {
+    const orderData = doc.data() as IOrder;
+    return { ...orderData, id: doc.id };
+  });
 };

@@ -1,5 +1,5 @@
 export default interface IOrder {
-    id: string;
+    id?: string;
     drinkType: string;
     drinkSize: string;
     milkType: string;

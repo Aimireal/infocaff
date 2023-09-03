@@ -2,6 +2,9 @@
 
 import React, { useState } from "react";
 import createOrder from "../api/createOrder";
+import { DrinkTypes } from "../data/drinkTypes";
+import { MilkTypes } from "../data/MilkTypes";
+import { SizeTypes } from "../data/SizeTypes";
 
 export default function OrderForm() {
   const [addingOrder, setAddingOrder] = useState(false);
@@ -43,6 +46,16 @@ export default function OrderForm() {
   };
 
   const handleCreateOrderClick = async () => {
+    if (
+      coffeeType === "" ||
+      milkType === "" ||
+      size === "" ||
+      specialInstructions === "" ||
+      orderFor === ""
+    ) {
+      return;
+    }
+
     const order = createIOrderObject();
     setAddingOrder(true);
     await createOrder(order);
@@ -52,39 +65,60 @@ export default function OrderForm() {
   return (
     <div className="w-full p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div>
-        <div className="grid grid-cols-3 gap-2 m-2 justify-items-center">
+        <div className="grid grid-cols-3 gap-4 m-2 justify-items-center">
           <div>
-            <label className="block text-sm mb-2">Coffee Type</label>
-            <input
-              id="coffeeType"
-              className="text-sm rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            <label className="block text-sm mb-2">Drink Type</label>
+            <select
+              id="drinkType"
+              className="w-60 text-sm rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
               onChange={handleCoffeeTypeChange}
-            />
+            >
+              <option value="">Select a Drink Type</option>
+              {DrinkTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
             <label className="block text-sm mb-2">Milk Type</label>
-            <input
+            <select
               id="milkType"
-              className="text-sm rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="w-60 text-sm rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
               onChange={handleMilkTypeChange}
-            />
+            >
+              <option value="">Select a Milk Type</option>
+              {MilkTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
             <label className="block text-sm mb-2">Size</label>
-            <input
+            <select
               id="size"
-              className="text-sm rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="w-60 text-sm rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
               onChange={handleSizeChange}
-            />
+            >
+              <option value="">Select a Size</option>
+              {SizeTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
             <label className="block text-sm mb-2">Special Instructions</label>
             <input
               id="specialInstructions"
-              className="text-sm rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="w-60 text-sm rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
               onChange={handleSpecialInstructionsChange}
             />
@@ -93,7 +127,7 @@ export default function OrderForm() {
             <label className="block text-sm mb-2">Order For</label>
             <input
               id="orderFor"
-              className="text-sm rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="w-60 text-sm rounded-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               required
               onChange={handleOrderForChange}
             />

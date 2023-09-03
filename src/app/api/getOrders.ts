@@ -10,6 +10,7 @@ export const getOrders = async () => {
   const result: IOrder[] = [];
   querySnapshot.forEach((snapshot) => {
     const orderData = snapshot.data() as IOrder;
+    orderData.id = snapshot.id;
     result.push(orderData);
   });
 

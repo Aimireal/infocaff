@@ -1,1 +1,1 @@
-export const SizeTypes: string[] = ["Small", "Medium", "Large"];
+export const SizeTypes: string[] = ["Regular", "Large"];

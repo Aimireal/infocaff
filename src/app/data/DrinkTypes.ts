@@ -1,1 +1,16 @@
-export const DrinkTypes: string[] = ["Americano", "Espresso", "Latte", "Iced Latte", "Cappuccino", "Mocha", "Flat White", "Tea"];
+export const DrinkTypes: string[] = [
+  "Latte",
+  "Iced Latte",
+  "Cappuccino",
+  "Espresso",
+  "Americano",
+  "Flat White",
+  "Cortado",
+  "Macchiato",
+  "Mocha",
+  "Chai Latte",
+  "Babychino",
+  "Hot Chocolate",
+  "Hot Chocolate Supreme",
+  "Tea",
+];

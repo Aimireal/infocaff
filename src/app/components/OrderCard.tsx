@@ -9,12 +9,12 @@ interface OrderCardProps {
 export default function OrderCard({ order }: OrderCardProps) {
   return (
     <div className="w-full p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
         <div>
           <h5 className="mb-1 text-l font-bold tracking-tight text-gray-900 dark:text-white">
             Order: {order.drinkType}
           </h5>
-          <div className="grid grid-cols-3">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 grid-cols-3">
             <p className="mb-2 text-sm text-gray-700 dark:text-gray-400">
               Size: {order.drinkSize}
             </p>

@@ -16,7 +16,7 @@ export function OrderFormSelectInput({
         onChange={onChange}
       >
         <option value="">Select {label}</option>
-        {options.map((type) => (
+        {options?.map((type) => (
           <option key={type} value={type}>
             {type}
           </option>

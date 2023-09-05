@@ -102,6 +102,7 @@ export default function OrderForm() {
           />
           <OrderFormTextInput
             label="Special Instructions"
+            required={false}
             onChange={handleSpecialInstructionsChange}
           />
           <OrderFormTextInput

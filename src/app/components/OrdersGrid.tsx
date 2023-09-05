@@ -38,7 +38,7 @@ export default function OrdersGrid() {
       {loading ? (
         <LoadingDisplay />
       ) : orders.length === 0 ? (
-        <div>
+        <div className="flex mt-5 justify-center items-center">
           <h2>No Orders Found</h2>
         </div>
       ) : (

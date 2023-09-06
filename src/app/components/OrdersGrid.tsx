@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import IOrder from "../types/IOrder";
+import IOrder from "../interfaces/IOrder";
 import { getOrders } from "../api/getOrders";
 import { onSnapshot, collection } from "firebase/firestore";
 import { firestore } from "../config/clientApp";

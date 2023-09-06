@@ -62,17 +62,7 @@ export default function OrderForm() {
 
     setAddingOrder(true);
     await createOrder(order);
-
     setAddingOrder(false);
-    resetForm();
-  };
-
-  const resetForm = () => {
-    setDrinkType("");
-    setMilkType("");
-    setSize("");
-    setSpecialInstructions("");
-    setOrderFor("");
   };
 
   return (

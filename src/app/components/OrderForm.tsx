@@ -53,7 +53,6 @@ export default function OrderForm() {
       drinkType === "" ||
       milkType === "" ||
       size === "" ||
-      specialInstructions === "" ||
       orderFor === ""
     ) {
       return;
@@ -89,11 +88,6 @@ export default function OrderForm() {
             label="Milk Type"
             options={MilkTypes}
             onChange={handleMilkTypeChange}
-          />
-          <OrderFormSelectInput
-            label="Size"
-            options={SizeTypes}
-            onChange={handleSizeChange}
           />
           <OrderFormSelectInput
             label="Size"

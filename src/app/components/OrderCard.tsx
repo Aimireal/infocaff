@@ -1,10 +1,6 @@
 import React from "react";
-import IOrder from "../types/IOrder";
 import { deleteOrder } from "../api/deleteOrder";
-
-interface OrderCardProps {
-  order: IOrder;
-}
+import { OrderCardProps } from "../interfaces/IOrderCardProps";
 
 export default function OrderCard({ order }: OrderCardProps) {
   return (

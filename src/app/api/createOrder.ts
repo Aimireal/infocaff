@@ -1,6 +1,6 @@
 import { doc, setDoc } from "firebase/firestore";
 import { firestore } from "../config/clientApp";
-import IOrder from "../types/IOrder";
+import IOrder from "../interfaces/IOrder";
 
 const createOrder = async (order: IOrder) => {
   try {

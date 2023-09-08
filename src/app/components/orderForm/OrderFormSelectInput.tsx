@@ -1,5 +1,5 @@
 import React from "react";
-import { IOrderInputProps } from "../interfaces/IOrderInputProps";
+import { IOrderInputProps } from "@/app/interfaces/IOrderInputProps";
 
 export function OrderFormSelectInput({
   label,

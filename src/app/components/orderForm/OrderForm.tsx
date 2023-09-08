@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import createOrder from "../api/createOrder";
-import { DrinkTypes } from "../data/DrinkTypes";
-import { MilkTypes } from "../data/MilkTypes";
-import { SizeTypes } from "../data/SizeTypes";
+import createOrder from "../../api/createOrder";
+import { DrinkTypes } from "../../data/DrinkTypes";
+import { MilkTypes } from "../../data/MilkTypes";
+import { SizeTypes } from "../../data/SizeTypes";
 import { OrderFormSelectInput } from "./OrderFormSelectInput";
 import { OrderFormTextInput } from "./OrderFormTextInput";
 

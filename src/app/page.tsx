@@ -1,5 +1,5 @@
 import FullscreenModal from "./components/FullscreenModal";
-import OrderForm from "./components/OrderForm";
+import OrderForm from "./components/orderForm/OrderForm";
 import OrdersGrid from "./components/OrdersGrid";
 
 export default function Home() {

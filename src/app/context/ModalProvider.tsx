@@ -23,7 +23,7 @@ export function useModal() {
 }
 
 export default function ModalProvider({ children }: FullscreenModalProps) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);

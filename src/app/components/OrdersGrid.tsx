@@ -34,7 +34,7 @@ export default function OrdersGrid() {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 gap-4" id="orders">
+    <div className="w-full p-2 grid grid-cols-1 gap-4" id="orders">
       {loading ? (
         <LoadingDisplay />
       ) : orders.length === 0 ? (

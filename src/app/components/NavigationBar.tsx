@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { useModal } from "../context/ModalProvider";
-import AvatarIcon from "./AvatarIcon";
 
 export function NavigationBar() {
   const { openModal } = useModal();
@@ -33,7 +32,6 @@ export function NavigationBar() {
             Place Order
           </button>
         )}
-        <AvatarIcon />
       </div>
     </nav>
   );

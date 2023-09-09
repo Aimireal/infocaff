@@ -6,7 +6,7 @@ import { FullscreenModalProps } from "../interfaces/IFullscreenModalProps";
 
 export default function FullscreenModal({ children }: FullscreenModalProps) {
   const { isOpen, closeModal } = useModal();
-  
+
   return (
     <>
       {isOpen && (
@@ -14,13 +14,13 @@ export default function FullscreenModal({ children }: FullscreenModalProps) {
           id="defaultModal"
           tabIndex={-1}
           aria-hidden="true"
-          className="w-full p-2 overflow-x-hidden overflow-y-auto md:inset-0 max-h-full"
+          className="w-full p-2 overflow-x-hidden overflow-y-auto md:inset-0 max-h-full flex justify-center items-center"
         >
           <div className="relative w-full max-h-full">
             <div className="relative rounded-lg dark:bg-gray-700">
               <div className="flex p-1.5 dark:border-gray-600">
                 <div className="flex-none w-1/3"></div>
-                <div className="flex-grow w-1/3 text-l font-semibold text-center text-gray-900 dark:text-white">
+                <div className="flex-grow w-1/3 text-lg font-semibold text-center text-gray-900 dark:text-white flex items-center justify-center">
                   Place Order
                 </div>
                 <div className="flex items-center flex-none w-1/3 justify-end">

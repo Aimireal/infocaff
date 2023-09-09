@@ -23,7 +23,7 @@ export default function OrderCard({ order }: OrderCardProps) {
           </div>
         </div>
         <div className="flex justify-end">
-          <div className="w-3/5 grid grid-cols-1">
+          <div className="w-2/5 grid grid-cols-1">
             <p className="mb-2 text-sm text-gray-700 dark:text-gray-400">
               Order for: {order.orderFor}
             </p>

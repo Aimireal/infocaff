@@ -1,6 +1,6 @@
 import { query, limit, getDocs, collection } from "firebase/firestore";
-import IOrder from "../interfaces/IOrder";
-import { firestore } from "../config/clientApp";
+import IOrder from "@/app/interfaces/IOrder";
+import { firestore } from "./firestore";
 
 export const getOrders = async () => {
   const ordersCollection = collection(firestore, "orders");

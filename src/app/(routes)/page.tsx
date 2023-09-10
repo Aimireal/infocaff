@@ -1,8 +1,8 @@
 "use client";
 
-import FullscreenModal from "./components/FullscreenModal";
-import OrderForm from "./components/orderForm/OrderForm";
-import OrdersGrid from "./components/OrdersGrid";
+import FullscreenModal from "../components/FullscreenModal";
+import OrderForm from "../components/orderForm/OrderForm";
+import OrdersGrid from "../components/OrdersGrid";
 import { useState, useEffect } from "react";
 
 export default function Home() {

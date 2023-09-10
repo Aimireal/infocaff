@@ -1,7 +1,7 @@
 import { deleteDoc, doc } from "firebase/firestore";
-import { firestore } from "../config/clientApp";
+import { db } from "../firebase";
 
 export const deleteOrder = async (documentId: string) => {
-  const _order = doc(firestore, `orders/${documentId}`);
+  const _order = doc(db, `orders/${documentId}`);
   await deleteDoc(_order);
 };

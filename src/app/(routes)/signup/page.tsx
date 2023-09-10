@@ -17,14 +17,12 @@ export default function Page() {
       console.log(error);
       return;
     }
-
-    console.log(result);
     router.push("/");
   };
 
   return (
-    <div className="flex justify-center items-center h-screen text-black">
-      <div className="w-96 bg-white rounded shadow p-6">
+    <div className="flex flex-col items-center pt-40 text-black">
+      <div className="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <h1 className="text-3xl font-bold mb-6">Registration</h1>
         <form onSubmit={handleForm} className="space-y-4">
           <div>

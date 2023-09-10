@@ -66,7 +66,8 @@ export default function OrderForm() {
   };
 
   return (
-    <div className="w-full p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div  className="w-full p-2">
+      <div className="w-full p-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 m-2 justify-items-center">
           <OrderFormSelectInput
@@ -104,6 +105,7 @@ export default function OrderForm() {
           Create Order
         </button>
       </div>
+    </div>
     </div>
   );
 }

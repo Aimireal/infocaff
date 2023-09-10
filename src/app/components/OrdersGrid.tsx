@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import IOrder from "../interfaces/IOrder";
-import { getOrders } from "../api/getOrders";
+import { getOrders } from "../firebase/orders/getOrders";
 import { onSnapshot, collection } from "firebase/firestore";
-import { firestore } from "../config/clientApp";
+import { firestore } from "../firebase/orders/firestore";
 import OrderCard from "./OrderCard";
 import LoadingDisplay from "./LoadingDisplay";
 

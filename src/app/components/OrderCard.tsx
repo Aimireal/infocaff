@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteOrder } from "../api/deleteOrder";
+import { deleteOrder } from "../firebase/orders/deleteOrder";
 import { OrderCardProps } from "../interfaces/IOrderCardProps";
 
 export default function OrderCard({ order }: OrderCardProps) {

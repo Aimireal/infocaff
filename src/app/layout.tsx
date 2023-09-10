@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NavigationBar } from "./components/NavigationBar";
 import ModalProvider from "./context/ModalProvider";
+import { AuthContextProvider } from "./context/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ModalProvider>
-          <NavigationBar />
-          {children}
-        </ModalProvider>
+        <AuthContextProvider>
+          <ModalProvider>
+            <NavigationBar />
+            {children}
+          </ModalProvider>
+        </AuthContextProvider>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import IOrder from "../interfaces/IOrder";
 import { getOrders } from "../firebase/orders/getOrders";
 import { onSnapshot, collection } from "firebase/firestore";
-import { firestore } from "../firebase/orders/firestore";
+import { db } from "../firebase/firebase";
 import OrderCard from "./OrderCard";
 import LoadingDisplay from "./LoadingDisplay";
 
@@ -21,7 +21,7 @@ export default function OrdersGrid() {
 
     fetchOrders();
 
-    const ordersCollection = collection(firestore, "orders");
+    const ordersCollection = collection(db, "orders");
     const unsubscribe = onSnapshot(ordersCollection, (snapshot) => {
       const newOrders = snapshot.docs.map((doc) => {
         const orderData = doc.data() as IOrder;

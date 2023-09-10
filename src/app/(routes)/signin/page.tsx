@@ -4,7 +4,7 @@ import signIn from "@/app/firebase/auth/signIn";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export function Page(): JSX.Element {
+export default function Page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();

@@ -1,23 +1,25 @@
 "use client";
 
 import React, { useState } from "react";
-import createOrder from "../api/createOrder";
-import { DrinkTypes } from "../data/DrinkTypes";
-import { MilkTypes } from "../data/MilkTypes";
-import { SizeTypes } from "../data/SizeTypes";
+import createOrder from "../../firebase/orders/createOrder";
+import { DrinkTypes } from "../../data/DrinkTypes";
+import { MilkTypes } from "../../data/MilkTypes";
+import { SizeTypes } from "../../data/SizeTypes";
+import { OrderFormSelectInput } from "./OrderFormSelectInput";
+import { OrderFormTextInput } from "./OrderFormTextInput";
 
 export default function OrderForm() {
   const [addingOrder, setAddingOrder] = useState(false);
 
-  const [coffeeType, setCoffeeType] = useState("");
+  const [drinkType, setDrinkType] = useState("");
   const [milkType, setMilkType] = useState("");
   const [size, setSize] = useState("");
   const [specialInstructions, setSpecialInstructions] = useState("");
   const [orderFor, setOrderFor] = useState("");
 
-  const handleCoffeeTypeChange = (e: {
+  const handleDrinkTypeChange = (e: {
     target: { value: React.SetStateAction<string> };
-  }) => setCoffeeType(e.target.value);
+  }) => setDrinkType(e.target.value);
 
   const handleMilkTypeChange = (e: {
     target: { value: React.SetStateAction<string> };
@@ -37,17 +39,18 @@ export default function OrderForm() {
 
   const createIOrderObject = () => {
     return {
-      drinkType: coffeeType,
+      drinkType: drinkType,
       milkType: milkType,
       drinkSize: size,
-      specialInstructions: specialInstructions,
+      specialInstructions:
+        specialInstructions.trim() === "" ? "None" : specialInstructions,
       orderFor: orderFor,
     };
   };
 
   const handleCreateOrderClick = async () => {
     if (
-      coffeeType === "" ||
+      drinkType === "" ||
       milkType === "" ||
       size === "" ||
       orderFor === ""
@@ -56,6 +59,7 @@ export default function OrderForm() {
     }
 
     const order = createIOrderObject();
+
     setAddingOrder(true);
     await createOrder(order);
     setAddingOrder(false);
